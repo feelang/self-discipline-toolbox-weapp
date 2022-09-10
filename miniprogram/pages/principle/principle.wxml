@@ -1,0 +1,9 @@
+<!--pages/principle/principle.wxml-->
+<view class="container">
+  <view>
+    <text>LIFE PRINCIPLES</text>
+  </view>
+  <view>
+    <text>WROK PRINCIPLES</text>
+  </view>
+</view>

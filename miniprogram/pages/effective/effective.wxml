@@ -1,0 +1,10 @@
+<!--pages/effective/effective.wxml-->
+<view class="container">
+  <block wx:for="{{habits}}" wx:for-item="habit" wx:for-index="index">
+    <view class="card">
+      <text class="card__index">{{index + 1}}</text>
+      <text class="card__title">{{habit.title}}</text>
+      <text class="card__subtitle">{{habit.desc}}</text>
+    </view>
+  </block>
+</view>

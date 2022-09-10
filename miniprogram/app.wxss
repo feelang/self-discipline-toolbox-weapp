@@ -1,0 +1,54 @@
+/**app.wxss**/
+:root {
+  --primaryColor: #ff006a;
+}
+
+page {
+  background-color: #eee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 8rpx 16rpx;
+}
+
+.card {
+  margin: 16rpx 8rpx;
+  border-radius: 8rpx;
+  background-color: white;
+  display: flex;
+  padding: 32rpx 16rpx;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.card__index {
+  font-size: 3rem;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.card__subtitle {
+  margin-top: 16rpx;
+  color: gray;
+}
+
+.card_actions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 20rpx;
+}
+
+.text-button {
+  font-weight: bold;
+}
+
+.text-button--primary {
+  color: purple;
+}

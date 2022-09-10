@@ -1,0 +1,12 @@
+<view class="container">
+  <block wx:for="{{biases}}" wx:for-item="bias" wx:for-index="index"  wx:key="title">
+    <view class="card">
+      <text class="card__index">{{index + 1}}</text>
+      <text class="card__title">{{bias.title}}</text>
+      <text class="card__subtitle">{{bias.desc}}</text>
+      <view class="card_actions">
+        <text class="text-button text-button--primary" bindtap="onLearnMore" data-index="{{index}}">LEARN MORE</text>
+      </view>
+    </view>
+  </block>
+</view>

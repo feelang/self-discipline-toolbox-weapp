@@ -1,0 +1,49 @@
+/**index.wxss**/
+.container {
+  padding: 0rpx 0rpx;
+}
+
+.header {
+  margin: 96rpx 96rpx;
+  padding: 16rpx 32rpx;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 6rpx solid gainsboro;
+}
+
+.header__text {
+  color: gray;
+}
+
+.header__text--emphasized {
+  margin: 8rpx 0rpx;
+  font-weight: bold;
+  color: #666666;
+}
+
+.item {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.item__title {
+  margin-left: 8rpx;
+  flex: 1;
+}
+
+.item__image {
+  padding: 16rpx 16rpx;
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.item__arrow {
+  width: 48rpx;
+  height: 48rpx;
+}

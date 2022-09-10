@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="article">
+    <view class="article__labels">
+      <block wx:for="{{bias.labels}}" wx:for-item="label" wx:key="label">
+        <view class="article__label-item" style="background-color: {{label2color[label]}}">{{label}}</view>
+      </block>
+    </view>
+    <view class="article__title">
+      <text>{{bias.title}}</text>
+    </view>
+    <view class="article__body">
+      <text>{{bias.desc}}</text>
+    </view>
+    <view class="article__illustration">
+      <image wx:if="{{bias.illustration}}" src="../../images/{{bias.illustration}}" />
+      <image wx:if="{{!bias.illustration}}" src="../../images/biases/bias.svg" />
+    </view>
+    <view class="article__caption">
+      <text>{{bias.ext}}</text>
+    </view>
+    <!-- <view class="article__actions">
+      <view class="canvas-box">
+        <canvas canvas-id="myCanvas" style="width:100%;height:{{widowHeight}}px;"></canvas>
+      </view>
+      <button class="article__action-button--primary" bindtap="onSharePic">Share</button>
+    </view> -->
+  </view>
+</view>

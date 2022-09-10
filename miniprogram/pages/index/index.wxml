@@ -1,0 +1,23 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="header">
+    <text class="header__text">BE THE</text>
+    <text class="header__text--emphasized">VERY BEST VERSION</text>
+    <text class="header__text">OF YOU</text>
+  </view>
+  <view class="item" bindtap="onViewBiases">
+    <image class="item__image" src="../../images/brain.svg" />
+    <text class="item__title">50 Cogntive Biases</text>
+    <image class="item__arrow" src="../../images/arrow-right.svg"/>
+  </view>
+  <view class="item" bindtap="onViewEffective">
+    <image class="item__image" src="../../images/goal.svg" />
+    <text class="item__title">The 7 Habits of Highly Effective People</text>
+    <image class="item__arrow" src="../../images/arrow-right.svg"/>
+  </view>
+  <!-- <view class="item" bindtap="onViewPrinciples">
+    <image class="item__image" src="../../images/principle.svg" />
+    <text class="item__title">Principles</text>
+    <image class="item__arrow" src="../../images/arrow-right.svg"/>
+  </view> -->
+</view>
