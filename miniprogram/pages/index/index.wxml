@@ -1,9 +1,8 @@
 <!-- index.wxml -->
 <view class="container">
   <view class="header">
-    <text class="header__text">BE THE</text>
-    <text class="header__text--emphasized">VERY BEST VERSION</text>
-    <text class="header__text">OF YOU</text>
+    <image class="header__icon" src="../../images/self-discipline.svg"/>
+    <text class="header__text">成为最好的自己</text>
   </view>
   <view class="item" bindtap="onViewBiases">
     <image class="item__image" src="../../images/brain.svg" />

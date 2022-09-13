@@ -1,7 +1,10 @@
 /* pages/biase/biase-detail.wxss */
 .container {
-  padding: 32rpx;
   margin: 0rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .article {
@@ -9,12 +12,13 @@
   color: #7C7D88;
   padding: 16rpx;
   padding-bottom: 32rpx;
-  margin-bottom: 32rpx;
   border-radius: 32rpx;
+  margin: 24rpx 16rpx;
 }
 
 .article__labels {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
 }
@@ -24,7 +28,8 @@
   font-size: 0.8rem;
   color: white;
   padding: 4rpx 16rpx;
-  margin-right: 8rpx;
+  margin-right: 4rpx;
+  margin-bottom: 4rpx;
 }
 
 .article__title {
@@ -55,28 +60,25 @@
   font-size: 0.9rem;
 }
 
-.article__actions {
-  display: flex;
-  margin-top: 48rpx;
-  margin-bottom: 24rpx;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.article__action-icon {
-  width: 48rpx;
-  height: 48rpx;
-}
-
-.article__action-button--primary {
-  background-color: purple;
-  border-radius: 48rpx;
-  color: white;
-}
-
-.canvas-box {
+.actions {
+  position: absolute;
+  bottom: 80rpx;
+  left: 0rpx;
   width: 100%;
-  position: fixed;
-  left: 0;
-  top: 999999rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 48rpx;
+}
+
+.action-icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.action-icon--primary {
+  visibility: hidden;
+  width: 80rpx;
+  height: 80rpx;
 }

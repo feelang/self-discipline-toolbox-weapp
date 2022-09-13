@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    index: 0,
     bias: {},
     label2color: {
       "Memory": "#DE564F",
@@ -24,11 +25,7 @@ Page({
    */
   onLoad(options: any) {
     let index = options.index;
-    let bias = recognitiveBiases[index];
-
-    this.setData({
-      bias: bias,
-    });
+    this._loadDetail(index);
   },
 
   /**
@@ -78,5 +75,30 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  _loadDetail(index: any) {
+    let bias = recognitiveBiases[index];
+
+    this.setData({
+      index: index,
+      bias: bias,
+    });
+  },
+
+  onShowNext() {
+    let theIndex = Number(this.data.index) + 1;
+    if (theIndex >= recognitiveBiases.length) {
+      theIndex = 0;
+    }
+    this._loadDetail(theIndex);
+  },
+
+  onShowPrevious() {
+    let theIndex = this.data.index - 1;
+    if (theIndex < 0) {
+      theIndex = recognitiveBiases.length - 1;
+    }
+    this._loadDetail(theIndex);
   },
 })
