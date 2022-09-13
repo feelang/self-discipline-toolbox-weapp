@@ -72,6 +72,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: this.data.item.title,
+      paht: `pages/biase/biase-detail?part=${this.data.part}&index=${this.data.index}`,
+    }
   }
 })
