@@ -14,9 +14,9 @@
     <text class="item__title">The 7 Habits of Highly Effective People</text>
     <image class="item__arrow" src="../../images/arrow-right.svg"/>
   </view>
-  <!-- <view class="item" bindtap="onViewPrinciples">
-    <image class="item__image" src="../../images/principle.svg" />
+  <view class="item" bindtap="onViewPrinciples">
+    <image class="item__image" src="../../images/principles.svg" />
     <text class="item__title">Principles</text>
     <image class="item__arrow" src="../../images/arrow-right.svg"/>
-  </view> -->
+  </view>
 </view>

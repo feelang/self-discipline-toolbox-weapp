@@ -23,7 +23,7 @@
   },
   "include": [
     "./**/*.ts", "miniprogram/data/quotes.js"
-  ],
+, "miniprogram/pages/principle/principle.js", "miniprogram/pages/biase/biase-detail.js", "miniprogram/pages/principle/detail.js"  ],
   "exclude": [
     "node_modules"
   ]

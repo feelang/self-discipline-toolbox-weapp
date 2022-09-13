@@ -1,0 +1,17 @@
+<!--pages/principle/detail.wxml-->
+<view class="container">
+  <view>
+    <view class="title">
+      <text>{{item.title}}</text>
+    </view>
+    <view wx:if="{{item.imgUrl}}" class="image">
+      <image src="{{item.imgUrl}}" mode="aspectFill"/>
+    </view>
+    <block wx:for="{{item.subtitles}}" wx:for-item="subtitle">
+      <view class="subtitle">
+        <text class="subtitle__index">{{index}}. </text>
+        <text class="subtitle__content">{{subtitle}}.</text>
+      </view>
+    </block>
+  </view>
+</view>

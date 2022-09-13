@@ -23,7 +23,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options: any) {
+  onLoad(options) {
     let index = options.index;
     this._loadDetail(index);
   },
@@ -74,10 +74,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: this.data.bias.title,
+      paht: `pages/biase/biase-detail?index=${this.data.index}`,
+    };
   },
 
-  _loadDetail(index: any) {
+  _loadDetail(index) {
     let bias = recognitiveBiases[index];
 
     this.setData({

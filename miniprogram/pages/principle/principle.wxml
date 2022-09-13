@@ -1,9 +1,38 @@
 <!--pages/principle/principle.wxml-->
 <view class="container">
   <view>
-    <text>LIFE PRINCIPLES</text>
+    <view class="part-title">
+      <text>LIFE PRINCIPLES</text>
+    </view>
+    <block wx:for="{{lifePrinciples}}" wx:for-item="item" wx:key="title">
+      <view class="item"  bindtap="onViewDetail" data-index="{{item.index}}" data-part="life" >
+        <view class="item__index">{{item.index}}</view>
+        <text class="item__title">{{item.title}}</text>
+        <block wx:if="{{item.subtitles.length > 0}}">
+          <image class="item__arrow" src="../../images/arrow-right.svg"/>
+        </block>
+      </view>
+    </block>
   </view>
   <view>
-    <text>WROK PRINCIPLES</text>
+    <view class="part-title">
+      <text>WROK PRINCIPLES</text>
+    </view>
+    <block wx:for="{{workPrinciples}}" wx:for-item="principle" wx:key="title">
+      <view class="category">
+        <view class="category__title">
+          <text>{{principle.category}}</text>
+        </view>
+        <block wx:for="{{principle.content}}" wx:for-item="item" wx:key="title">
+          <view class="item">
+            <view class="item__index">{{item.index}}</view>
+            <text class="item__title">{{item.title}}</text>
+            <block wx:if="{{item.subtitles.length > 0}}">
+              <image class="item__arrow" src="../../images/arrow-right.svg" />
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
   </view>
 </view>

@@ -1,1 +1,55 @@
 /* pages/principle/principle.wxss */
+
+.container {
+  margin: 0rpx;
+  padding: 0rpx;
+}
+
+.part-title {
+  color: #DE2532;
+  margin: 36rpx 0rpx;
+  text-align: center;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.category {
+  margin-bottom: 48rpx;
+}
+
+.category__title {
+  font-weight: bold;
+  margin-left: 16rpx;
+  margin-bottom: 8rpx;
+}
+
+.item {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.item__index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx 16rpx;
+  width: 72rpx;
+  height: 72rpx;
+  color: #DE2532;
+  font-weight: bolder;
+}
+
+.item__title {
+  margin-left: 8rpx;
+  flex: 1;
+}
+
+.item__arrow {
+  width: 48rpx;
+  height: 48rpx;
+}

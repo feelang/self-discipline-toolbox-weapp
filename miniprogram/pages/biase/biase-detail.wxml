@@ -1,3 +1,10 @@
+<wxs module="caculator">
+  var add = function (a, b) {
+    return Number(a) + Number(b);
+  }
+  module.exports.add = add;
+</wxs>
+
 <view class="container">
   <view class="article">
     <view class="article__labels">
@@ -6,7 +13,7 @@
       </block>
     </view>
     <view class="article__title">
-      <text>{{index + 1}}. {{bias.title}}</text>
+      <text>{{caculator.add(index, 1)}}. {{bias.title}}</text>
     </view>
     <view class="article__body">
       <text>{{bias.desc}}</text>

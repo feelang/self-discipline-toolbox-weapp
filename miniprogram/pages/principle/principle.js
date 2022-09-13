@@ -1,18 +1,24 @@
 // pages/principle/principle.ts
+import principles  from "../../data/principles";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    lifePrinciples: [],
+    workPrinciples: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.setData({
+      lifePrinciples: principles["life"],
+      workPrinciples: principles["work"],
+    });
   },
 
   /**
@@ -62,5 +68,13 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  onViewDetail(e) {
+    let part = e.currentTarget.dataset.part;
+    let index = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: `../principle/detail?part=${part}&index=${index}`,
+    });
   }
 })

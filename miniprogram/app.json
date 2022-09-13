@@ -5,7 +5,8 @@
     "pages/effective/effective",
     "pages/principle/principle",
     "pages/biase/biase-detail",
-    "pages/biase/biase-list"
+    "pages/biase/biase-list",
+    "pages/principle/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
