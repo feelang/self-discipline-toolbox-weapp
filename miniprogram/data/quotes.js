@@ -8,7 +8,7 @@ const recognitiveBiases = [
   },
   {
     "title": "Self-Serving Bias",
-    "desc": "our failures are situational, but our successes are our responsibility.",
+    "desc": "Our failures are situational, but our successes are our responsibility.",
     "ext": "You won that award due to hard work rather than help or luck. Meanwhile, you failed a test because you hadn't gotten enough sleep.",
     "labels": ["Money", "Belief", "Social"],
     "illustration": "biases/self-serving-bias.svg",
@@ -133,7 +133,7 @@ const recognitiveBiases = [
     "illustration": "biases/automation-bias.svg",
   },
   {
-    "title": " Google Effect (aka Digital Amnesia)",
+    "title": " Google Effect (aka \"Digital Amnesia\")",
     "desc": " We tend to forget information that’s easily looked up in search engines.",
     "ext": "\"What was the name of that actor in that funny movie? I've looked it up like eight times... .\"",
     "labels": ["Learning", "Memory", "Belief"],
@@ -177,7 +177,7 @@ const recognitiveBiases = [
   {
     "title": "Availability Cascade",
     "desc": "Tied to our need for social acceptance, collective beliefs gain more plausibility through public repetition.",
-    "ext": " A:story about razor blades appearing in candy eventually led to many people no longer offering homemade treats on Halloween in America.",
+    "ext": " A story about razor blades appearing in candy eventually led to many people no longer offering homemade treats on Halloween in America.",
     "labels": ["Memory", "Social", "Learning", "Belief", "Money", "Politics"],
     "illustration": "biases/availability-cascade.svg",
   },
@@ -190,13 +190,13 @@ const recognitiveBiases = [
   },
   {
     "title": "Status Quo Bias",
-    "desc": "We tend to prefer things to stay the same; changes from the baseline are considered to bea loss.",
+    "desc": "We tend to prefer things to stay the same; changes from the baseline are considered to be a loss.",
     "ext": "Even though an app's terms of service invade Sally's privacy, she'd rather not switch to another app.",
     "labels": ["Memory", "Social", "Learning", "Belief", "Money", "Politics"],
     "illustration": "biases/status-quo-bias.svg",
   },
   {
-    "title": " Sunk Cost Fallacy (aka Escalation of Commitment)",
+    "title": " Sunk Cost Fallacy (aka \"Escalation of Commitment\")",
     "desc": "We invest more in things that have cost us something rather than altering our investments, even if we face negative outcomes.",
     "ext": "\"In for a penny, in for a pound!\"",
     "labels": ["Memory", "Belief", "Money"],
@@ -330,7 +330,7 @@ const recognitiveBiases = [
   },
   {
     "title": "Pressimism Bias",
-    "desc": "We sometimes overestimate the likeihood of bad outcomes.",
+    "desc": "We sometimes overestimate the likelihood of bad outcomes.",
     "ext": "\"Nothing will ever get better.\"",
     "labels": ["Memory", "Belief"],
     "illustration": "biases/pressimism-bias.svg",

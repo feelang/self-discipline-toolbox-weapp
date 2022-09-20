@@ -1,0 +1,56 @@
+/* pages/principle/principle.wxss */
+
+.container {
+  margin: 0rpx 0rpx;
+  padding: 0rpx 0rpx;
+  background-color: white;
+}
+
+.life-container {
+  padding: 16rpx 32rpx;
+}
+
+.work-container {
+  padding: 16rpx 32rpx;
+}
+
+.part-title-box {
+  border-left: red solid 8rpx;
+  margin: 16rpx 0rpx;
+  background-color: #EE2D2B10;
+}
+
+.part-title {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin-left: 16rpx;
+}
+
+.category__title {
+  margin-bottom: 8rpx;
+  font-weight: bold;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  margin: 16rpx 0rpx;
+}
+
+.item__index {
+  width: 48rpx;
+  color: #DE2532;
+  font-weight: bolder;
+}
+
+.item__title {
+  margin-left: 8rpx;
+  flex: 1;
+  font-weight: 200;
+  text-decoration-style: dotted;
+}
+
+.item__arrow {
+  width: 48rpx;
+  height: 48rpx;
+}

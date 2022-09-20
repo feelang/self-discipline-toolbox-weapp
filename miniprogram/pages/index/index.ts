@@ -7,6 +7,13 @@ Page({
   data: {
     
   },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  },
   // 事件处理函数
   onViewEffective() {
     wx.navigateTo({
@@ -22,7 +29,7 @@ Page({
 
   onViewPrinciples() {
     wx.navigateTo({
-      url: '../principle/principle',
+      url: '../principle/list',
     });
   }
 })

@@ -71,6 +71,7 @@ Page({
   },
 
   onViewDetail(e) {
+    return;
     let part = e.currentTarget.dataset.part;
     let index = e.currentTarget.dataset.index;
     wx.navigateTo({

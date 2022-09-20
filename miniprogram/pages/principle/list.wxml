@@ -1,22 +1,19 @@
 <!--pages/principle/principle.wxml-->
 <view class="container">
-  <view>
-    <view class="part-title">
-      <text>LIFE PRINCIPLES</text>
+  <view class="life-container">
+    <view class="part-title-box">
+      <text class="part-title">LIFE PRINCIPLES</text>
     </view>
     <block wx:for="{{lifePrinciples}}" wx:for-item="item" wx:key="title">
       <view class="item"  bindtap="onViewDetail" data-index="{{item.index}}" data-part="life" >
-        <view class="item__index">{{item.index}}</view>
+        <text class="item__index">{{item.index}}.</text>
         <text class="item__title">{{item.title}}</text>
-        <block wx:if="{{item.subtitles.length > 0}}">
-          <image class="item__arrow" src="../../images/arrow-right.svg"/>
-        </block>
       </view>
     </block>
   </view>
-  <view>
-    <view class="part-title">
-      <text>WROK PRINCIPLES</text>
+  <view class="work-container">
+    <view class="part-title-box">
+      <text class="part-title">WROK PRINCIPLES</text>
     </view>
     <block wx:for="{{workPrinciples}}" wx:for-item="principle" wx:key="title">
       <view class="category">
@@ -25,11 +22,8 @@
         </view>
         <block wx:for="{{principle.content}}" wx:for-item="item" wx:key="title">
           <view class="item">
-            <view class="item__index">{{item.index}}</view>
+            <view class="item__index">{{item.index}}.</view>
             <text class="item__title">{{item.title}}</text>
-            <block wx:if="{{item.subtitles.length > 0}}">
-              <image class="item__arrow" src="../../images/arrow-right.svg" />
-            </block>
           </view>
         </block>
       </view>

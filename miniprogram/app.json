@@ -3,10 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/effective/effective",
-    "pages/principle/principle",
-    "pages/principle/detail",
     "pages/biases/detail",
-    "pages/biases/list"
+    "pages/biases/list",
+    "pages/principle/list",
+    "pages/principle/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
