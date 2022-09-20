@@ -68,7 +68,7 @@ Page({
   onLearnMore(e: any) {
     let index = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: `../biase/biase-detail?index=${index}`,
+      url: `../biases/detail?index=${index}`,
     });
   }
 })

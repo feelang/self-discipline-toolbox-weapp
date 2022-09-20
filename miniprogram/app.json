@@ -4,9 +4,9 @@
     "pages/logs/logs",
     "pages/effective/effective",
     "pages/principle/principle",
-    "pages/biase/biase-detail",
-    "pages/biase/biase-list",
-    "pages/principle/detail"
+    "pages/principle/detail",
+    "pages/biases/detail",
+    "pages/biases/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

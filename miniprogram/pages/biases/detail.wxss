@@ -64,21 +64,30 @@
   position: absolute;
   bottom: 80rpx;
   left: 0rpx;
+  margin-top: 48rpx;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 48rpx;
+  justify-content: center;
 }
 
 .action-icon {
+  flex: 1;
   width: 64rpx;
   height: 64rpx;
 }
 
 .action-icon--primary {
-  visibility: hidden;
-  width: 80rpx;
-  height: 80rpx;
+  flex: 1;
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 }

@@ -76,7 +76,7 @@ Page({
   onShareAppMessage() {
     return {
       title: this.data.bias.title,
-      paht: `pages/biase/biase-detail?index=${this.data.index}`,
+      path: `/pages/biases/detail?index=${this.data.index}`,
     };
   },
 
@@ -102,6 +102,17 @@ Page({
     if (theIndex < 0) {
       theIndex = recognitiveBiases.length - 1;
     }
+    this._loadDetail(theIndex);
+  },
+
+  onShowList() {
+    wx.navigateTo({
+      url: `../biases/list`,
+    });
+  },
+
+  onRandom() {
+    let theIndex = Math.floor((Math.random() * recognitiveBiases.length) + 1);
     this._loadDetail(theIndex);
   },
 })

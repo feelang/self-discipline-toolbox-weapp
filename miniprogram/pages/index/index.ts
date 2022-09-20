@@ -1,7 +1,5 @@
 // index.ts
 
-import { recognitiveBiases } from "../../data/quotes";
-
 // 获取应用实例
 const app = getApp<IAppOption>()
 
@@ -18,7 +16,7 @@ Page({
 
   onViewBiases() {
     wx.navigateTo({
-      url: '../biase/biase-list',
+      url: '../biases/list',
     });
   },
 
