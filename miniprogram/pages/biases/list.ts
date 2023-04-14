@@ -1,12 +1,13 @@
 // pages/biase/biase-list.ts
-import { recognitiveBiases } from "../../data/quotes";
+import biases from "../../data/biases";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    biases: recognitiveBiases,
+    biases,
   },
 
   /**
@@ -64,11 +65,4 @@ Page({
   onShareAppMessage() {
 
   },
-
-  onLearnMore(e: any) {
-    let index = e.currentTarget.dataset.index;
-    wx.navigateTo({
-      url: `../biases/detail?index=${index}`,
-    });
-  }
 })

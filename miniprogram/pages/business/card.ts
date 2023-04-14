@@ -1,13 +1,11 @@
-// pages/effective/effective.ts
-import habits  from "../../data/habits";
-
+// pages/business/card.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    habits: habits,
+
   },
 
   /**

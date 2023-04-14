@@ -1,0 +1,34 @@
+<view class="page">
+  <view wx:if="{{index < 0}}" class="loading">
+    <text>Loading...</text>
+  </view>
+  <swiper wx:if="{{index >= 0}}" class="swiper" vertical="true" duration="300" bindchange="swiperChange" current="{{index}}">
+    <swiper-item class="swiper-item" wx:for="{{list}}" wx:key="index" wx:for-item="bias">
+      <view class="article">
+        <view class="article__title">
+          <text>{{bias.title}}</text>
+        </view>
+        <view class="article__body">
+          <text>{{bias.desc}}</text>
+        </view>
+        <view class="article__illustration">
+          <image src="../../images/{{bias.illustration}}" />
+        </view>
+        <view class="article__caption">
+          <text>{{bias.ext}}</text>
+        </view>
+        <view class="article__labels">
+          <block wx:for="{{bias.labels}}" wx:for-item="label" wx:key="label">
+            <view class="article__label-item" style="color: {{label2color[label]}}">
+              #{{label}}
+            </view>
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="actions">
+    <button class="all-btn" bindtap="onShowAll">All</button>
+    <button class="share-btn" bindtap="onShare" open-type="share">Share</button>
+  </view>
+</view>

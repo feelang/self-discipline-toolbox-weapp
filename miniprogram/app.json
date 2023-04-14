@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/effective/effective",
-    "pages/biases/detail",
     "pages/biases/list",
+    "pages/biases/card",
     "pages/principle/list",
-    "pages/principle/detail"
+    "pages/principle/detail",
+    "pages/business/card"
   ],
   "window": {
     "backgroundTextStyle": "light",

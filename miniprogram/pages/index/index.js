@@ -1,11 +1,21 @@
 // index.ts
 
-// 获取应用实例
-const app = getApp<IAppOption>()
-
 Page({
   data: {
-    
+    list: [
+      {
+        icon: 'brain',
+        title: '',
+      },
+      {
+        icon: 'goal',
+        title: '',
+      },
+      {
+        icon: 'bubble',
+        title: '',
+      },
+    ]
   },
 
   /**
@@ -23,7 +33,7 @@ Page({
 
   onViewBiases() {
     wx.navigateTo({
-      url: '../biases/list',
+      url: '../biases/card',
     });
   },
 
@@ -31,5 +41,8 @@ Page({
     wx.navigateTo({
       url: '../principle/list',
     });
+  },
+
+  onView(event) {
   }
 })

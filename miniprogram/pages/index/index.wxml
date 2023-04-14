@@ -1,22 +1,24 @@
 <!-- index.wxml -->
 <view class="container">
   <view class="header">
-    <image class="header__icon" src="../../images/self-discipline.svg"/>
-    <text class="header__text">成为最好的自己</text>
+    <image src="../../images/cover.png" mode="widthFix" />
   </view>
-  <view class="item" bindtap="onViewBiases">
-    <image class="item__image" src="../../images/brain.svg" />
-    <text class="item__title">50 Cogntive Biases</text>
-    <image class="item__arrow" src="../../images/arrow-right.svg"/>
-  </view>
-  <view class="item" bindtap="onViewEffective">
-    <image class="item__image" src="../../images/goal.svg" />
-    <text class="item__title">The 7 Habits of Highly Effective People</text>
-    <image class="item__arrow" src="../../images/arrow-right.svg"/>
-  </view>
-  <view class="item" bindtap="onViewPrinciples">
-    <image class="item__image" src="../../images/principles.svg" />
-    <text class="item__title">Principles</text>
-    <image class="item__arrow" src="../../images/arrow-right.svg"/>
+  <view class="grid-container">
+    <view class="grid-item" bindtap="onViewBiases">
+      <image class="item__image" src="../../icons/brain.svg" />
+      <text class="item__title">50 Cogntive Biases</text>
+    </view>
+    <view class="grid-item" bindtap="onViewEffective">
+      <image class="item__image" src="../../icons/goal.svg" />
+      <text class="item__title">The 7 Habits of Highly Effective People</text>
+    </view>
+    <view class="grid-item" bindtap="onViewPrinciples">
+      <image class="item__image" src="../../icons/principles.svg" />
+      <text class="item__title">Principles</text>
+    </view>
+    <view class="grid-item" bindtap="onViewBusiness">
+      <image class="item__image" src="../../icons/business.svg" />
+      <text class="item__title">Business</text>
+    </view>
   </view>
 </view>

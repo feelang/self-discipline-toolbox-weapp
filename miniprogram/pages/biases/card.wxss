@@ -1,0 +1,111 @@
+/* pages/biases/card.wxss */
+
+.page {
+  height: 100%;
+}
+
+.loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.swiper-item {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.article__title {
+  text-align: center;
+  margin-top: 72rpx;
+  margin-bottom: 32rpx;
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+
+.article__body {
+  text-align: center;
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.article__illustration {
+  height: 160px;
+}
+
+.article__illustration image {
+  height: 80%;
+}
+
+.article__caption {
+  text-align: center;
+  font-style: italic;
+}
+
+.article__labels {
+  margin-top: 64rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.article__label-item {
+  font-weight: bold;
+  border-radius: 48rpx;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 8rpx 8rpx;
+  margin: 8rpx;
+}
+
+
+.actions {
+  position: absolute;
+  bottom: 80rpx;
+  left: 0rpx;
+  margin-top: 48rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions button {
+  margin: 0rpx 16rpx;
+  border-radius: 48rpx;
+  color: white;
+  max-width: 200rpx;
+}
+
+.actions .all-btn {
+  border: 1rpx solid black;
+  color: black;
+}
+
+.actions .share-btn {
+  background-color: black;
+}
+
