@@ -1,0 +1,33 @@
+/* pages/business/category.wxss */
+
+.page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.category {
+  width: calc(100% - 32rpx);
+  padding: 16rpx 0;
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #eee;
+  border-radius: 16rpx;
+}
+
+.category__title {
+  margin-left: 16rpx;
+  font-weight: bolder;
+  color: #231f20;
+  font-size: 1.2rem;
+}
+
+.category__desc {
+  margin-left: 16rpx;
+  margin-top: 16rpx;
+  color: #7f8284;
+}

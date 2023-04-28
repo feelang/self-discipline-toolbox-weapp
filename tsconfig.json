@@ -23,7 +23,7 @@
   },
   "include": [
     "./**/*.ts", "miniprogram/data/habits.js"
-, "miniprogram/pages/principle/principle.js", "miniprogram/pages/biases/biase-detail.js", "miniprogram/pages/principle/detail.js, "miniprogram/pages/principle/list.js", "miniprogram/pages/biases/detail.js"", "miniprogram/pages/biase/share.js", "miniprogram/pages/index/index.js", "miniprogram/pages/biases/card.js"  ],
+, "miniprogram/pages/principle/principle.js", "miniprogram/pages/biases/biase-detail.js", "miniprogram/pages/principle/detail.js, "miniprogram/pages/principle/list.js", "miniprogram/pages/biases/detail.js"", "miniprogram/pages/biase/share.js", "miniprogram/pages/index/index.js", "miniprogram/pages/biases/card.js", "miniprogram/pages/business/category.js"  ],
   "exclude": [
     "node_modules"
   ]

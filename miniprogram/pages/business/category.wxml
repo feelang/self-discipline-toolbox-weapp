@@ -1,0 +1,11 @@
+<!-- pages/business/category.wxml -->
+<view class="page">
+  <view class="category" bindtap="onSelect" data-index="{{-1}}">
+    <view class="category__title">ALL</view>
+    <view class="category__desc">BUSINESS PRINCIPLES</view>
+  </view>
+  <view class="category" wx:for="{{list}}" wx:key="index" wx:for-index="index" bindtap="onSelect" data-index="{{index}}">
+    <view class="category__title">{{item.category}}</view>
+    <view class="category__desc">{{item.desc}}</view>
+  </view>
+</view>

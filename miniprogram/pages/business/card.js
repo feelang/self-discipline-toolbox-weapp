@@ -1,18 +1,43 @@
 // pages/business/card.ts
+import quotes from '../../data/business.js'
+const utils = require('./common/utils.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    category: 'ALL',
+    list: []
+  },
 
+  onShowCategory() {
+    wx.navigateTo({
+      url: '/pages/business/category',
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    // const list = quotes.reduce((acc, cur) => {
+    //   return acc.concat(cur.contents);
+    // }, [])
 
+    const list = []
+    quotes.forEach(quote => {
+      const theList = utils.buildList(quote)
+      list.push(...theList)
+    })
+
+    console.log(list)
+
+    this.setData({
+      list,
+      category: 'ALL'
+    })
   },
 
   /**

@@ -1,2 +1,22 @@
-<!--pages/business/card.wxml-->
-<text>pages/business/card.wxml</text>
+<view class="page">
+    <swiper class="swiper" vertical="true" duration="300" bindchange="swiperChange" current="{{index}}">
+        <swiper-item class="swiper-item" wx:for="{{list}}" wx:key="index">
+            <view class="article">
+                <view class="article__title">
+                    <text>{{item.title}}</text>
+                </view>
+                <view class="article__subtitle">
+                    <text>{{item.subtitle}}</text>
+                </view>
+            </view>
+            <view class="category">
+                <view class="category__title">{{item.category}}</view>
+                <view class="category__desc">{{item.desc}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="actions">
+        <button class="all-btn" bindtap="onShowCategory">{{category}}</button>
+        <button class="share-btn" bindtap="onShare" open-type="share">SHARE</button>
+    </view>
+</view>

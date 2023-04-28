@@ -6,7 +6,8 @@
     "pages/biases/card",
     "pages/principle/list",
     "pages/principle/detail",
-    "pages/business/card"
+    "pages/business/card",
+    "pages/business/category"
   ],
   "window": {
     "backgroundTextStyle": "light",

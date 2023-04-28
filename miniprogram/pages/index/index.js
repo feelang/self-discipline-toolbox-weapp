@@ -43,6 +43,12 @@ Page({
     });
   },
 
+  onViewBusiness() {
+    wx.navigateTo({
+      url: '../business/card',
+    })
+  },
+
   onView(event) {
   }
 })
