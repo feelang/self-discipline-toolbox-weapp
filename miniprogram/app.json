@@ -5,9 +5,9 @@
     "pages/biases/list",
     "pages/biases/card",
     "pages/principle/list",
-    "pages/principle/detail",
     "pages/business/card",
-    "pages/business/category"
+    "pages/business/category",
+    "pages/principle/card"
   ],
   "window": {
     "backgroundTextStyle": "light",

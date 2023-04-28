@@ -39,7 +39,7 @@ Page({
 
   onViewPrinciples() {
     wx.navigateTo({
-      url: '../principle/list',
+      url: '../principle/card',
     });
   },
 

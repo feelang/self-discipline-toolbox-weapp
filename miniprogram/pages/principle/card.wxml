@@ -1,0 +1,25 @@
+<view class="page">
+    <swiper class="swiper" vertical="true" duration="300" bindchange="swiperChange" current="{{index}}">
+        <swiper-item class="swiper-item" wx:for="{{list}}" wx:key="index">
+            <view class="topic">
+                <view class="topic__category" wx:if="{{item.category}}">{{item.category}}</view>
+            </view>
+            <view class="article">
+                <view class="article__title">
+                    <text selectable="{{true}}">{{item.title}}</text>
+                </view>
+                <view class="article__subtitle" wx:key="index" wx:for="{{item.subtitles}}" wx:for-index="idx" wx:for-item="subtitle" wx:if="{{idx < subMaxLength}}">
+                    <view class="index">{{idx + 1}}.</view>
+                    <view>{{subtitle}}</view>
+                </view>
+                <view class="article__action" wx:if="{{item.subtitles.length > subMaxLength}}">
+                    <button bindtap="onViewMore" data-items="{{item.subtitles}}">More</button>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="actions">
+        <button class="all-btn" bindtap="onShowAll">ALL</button>
+        <button class="share-btn" bindtap="onShare" open-type="share">SHARE</button>
+    </view>
+</view>
