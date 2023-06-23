@@ -2,45 +2,47 @@ Component({
   properties: {
 
   },
+
   data: {
-    flag:false,
-    wrapAnimate:'wrapAnimate',
-    bgOpacity:0,
-    frameAnimate:'frameAnimate',
+    visible: false,
+    wrapAnimate: 'wrapAnimate',
+    bgOpacity: 0,
+    frameAnimate: 'frameAnimate',
   },
+
   properties: {
     frameTitle: {
       type: String,
       value: '标题',
     }
   },
-  
+
   methods: {
     showFrame() {
-      this.setData({ flag: true, wrapAnimate: 'wrapAnimate', frameAnimate: 'frameAnimate' });
+      this.setData({ visible: true, wrapAnimate: 'wrapAnimate', frameAnimate: 'frameAnimate' });
     },
+
     hideFrame(e) {
-      const that= this;
+      const that = this;
       that.setData({ wrapAnimate: 'wrapAnimateOut', frameAnimate: 'frameAnimateOut' });
-      setTimeout(()=>{
-        that.setData({ flag: false})
-      },400);
+      setTimeout(() => {
+        that.setData({ visible: false })
+      }, 400);
     },
-    onCancle(e){
+
+    onClose(e) {
       this.hideFrame(e);
-      this.triggerEvent('myCancel');
+      this.triggerEvent('close');
     },
-    
-    onConfirm(e){
-      this.hideFrame(e);
-      this.triggerEvent('myConfirm');
-    },
-    catchNone(){
+
+    catchNone() {
       //阻止冒泡
     },
+
     _showEvent() {
       this.triggerEvent("showEvent");
     },
+
     _hideEvent() {
       this.triggerEvent("hideEvent");
     }
