@@ -27,7 +27,7 @@ Component({
       that.setData({ wrapAnimate: 'wrapAnimateOut', frameAnimate: 'frameAnimateOut' });
       setTimeout(() => {
         that.setData({ visible: false })
-      }, 400);
+      }, 200);
     },
 
     onClose(e) {
@@ -35,16 +35,12 @@ Component({
       this.triggerEvent('close');
     },
 
+    onShareToMoments(e) {
+      this.triggerEvent('sharetomoments')
+    },
+
     catchNone() {
       //阻止冒泡
     },
-
-    _showEvent() {
-      this.triggerEvent("showEvent");
-    },
-
-    _hideEvent() {
-      this.triggerEvent("hideEvent");
-    }
   }
 })

@@ -6,7 +6,7 @@
         <button class="share-btn" open-type='share'>
           <image src="../images/share.svg" />
         </button>
-        <button class="share-btn">
+        <button class="share-btn" bindtap="onShareToMoments">
           <image src="../images/moments.svg" />
         </button>
       </view>

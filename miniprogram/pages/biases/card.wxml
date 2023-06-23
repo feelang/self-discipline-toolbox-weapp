@@ -31,5 +31,5 @@
     <button class="all-btn" bindtap="onShowAll">All</button>
     <button class="share-btn" bindtap="onShare">Share</button>
   </view>
-  <share-dialog id="bottomFrame" bindclose="onCloseShareDlg"></share-dialog>
+  <share-dialog id="bottomFrame" bindclose="onCloseShareDlg" bindsharetomoments="onShareToMoments"></share-dialog>
 </view>

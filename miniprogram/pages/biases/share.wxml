@@ -1,0 +1,6 @@
+<!--pages/biases/share.wxml-->
+<view class="container">
+  <canvas id="myCanvas" type="2d">
+  </canvas>
+  <button bind:tap="onSave">保存到相册</button>
+</view>
