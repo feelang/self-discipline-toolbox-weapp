@@ -1,0 +1,14 @@
+<view wx:if='{{flag}}'>
+  <view class='wrap {{wrapAnimate}}' style='background:rgba(0,0,0,{{bgOpacity}});'></view>
+  <view catchtap='hideFrame' class='frame-wrapper {{frameAnimate}}'>
+    <view catchtap='catchNone' class='frame'>
+      <!-- 头部 -->
+      <view class='title-wrapper flex'>
+        <view id='oncancle' catchtap='onCancle' class="title-cancle">取消</view>
+        <view id='onConfirm' catchtap= 'onConfirm' class="title-confirm">{{frameTitle}}</view>
+      </view>
+      <!-- 内容 -->
+      <slot></slot>
+    </view>
+  </view>
+</view>

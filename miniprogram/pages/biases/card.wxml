@@ -29,6 +29,24 @@
   </swiper>
   <view class="actions">
     <button class="all-btn" bindtap="onShowAll">All</button>
-    <button class="share-btn" bindtap="onShare" open-type="share">Share</button>
+    <button class="share-btn" bindtap="onShare">Share</button>
   </view>
+  <share-dialog id="bottomFrame" frameTitle="确定" bindmyConfirm="onConfirm" bindmyCancel="onCancel">
+    <scroll-view scroll-x="true" style="height: 200rpx;">
+      <block wx:if="{{deviceList.length > 0}}">
+        <block wx:for="{{deviceList}}">
+          <view class="body-content" id="bodyitem" bindtap="chooseItem" data-index="{{index}}">
+            <view></view>
+            <text>{{item.name}}</text>
+            <image wx:if="{{item.isCheck}}" src="/image/administrators_check.png"></image>
+            <image wx:else></image>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
+        <view class="nodata">暂无数据</view>
+      </block>
+    </scroll-view>
+  </share-dialog>
+
 </view>
