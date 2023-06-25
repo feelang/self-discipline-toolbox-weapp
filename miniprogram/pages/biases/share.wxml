@@ -2,6 +2,6 @@
 <view class="container">
   <canvas id="myCanvas" type="2d" />
   <view class="save-btn" bind:tap="onSavePicture">
-    <text>保存到相册</text>
+    <text>Save to Album</text>
   </view>
 </view>

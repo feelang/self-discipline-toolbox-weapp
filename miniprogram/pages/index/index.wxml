@@ -6,7 +6,7 @@
   <view class="grid-container">
     <view class="grid-item" bindtap="onViewBiases">
       <image class="item__image" src="../../icons/brain.svg" />
-      <text class="item__title">50 Cogntive Biases</text>
+      <text class="item__title">50 Cognitive Biases</text>
     </view>
     <view class="grid-item" bindtap="onViewEffective">
       <image class="item__image" src="../../icons/goal.svg" />

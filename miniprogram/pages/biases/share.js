@@ -20,7 +20,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    const biase = JSON.parse(options.biase)
+    const biase = JSON.parse(decodeURIComponent(options.biase))
+    console.log(biase)
     this.setData({
       biase
     })
@@ -50,51 +51,61 @@ Page({
         ctx.fillRect(0, 0, canvas.width, canvas.height)
         ctx.scale(dpr, dpr)
 
-        const { title, desc, illustration, ext, labels } = this.data.biase
+        const { title, alias, desc, illustration, ext, labels } = this.data.biase
 
+        let y = 80
         // Draw the title
         ctx.fillStyle = 'black'
-        ctx.font = 'bold 25px Arial'
+        ctx.font = 'bold 30px sans-serif'
         let text = ctx.measureText(title)
-        if (text.width > width - 40) {
-          ctx.font = 'bold 20px Arial'
-          text = ctx.measureText(title)
+        const lines = this._drawMultipleLines(ctx, title, y, 100, width, 35)
+
+        y += lines.length > 1 ? 80 : 35
+
+        // Draw the alias
+        if (!!alias) {
+          ctx.fillStyle = 'gray'
+          ctx.font = '20px sans-serif'
+          const theAlias = `(${alias})`
+          const metrics = ctx.measureText(theAlias)
+          ctx.fillText(theAlias, parseInt((width - metrics.width)) / 2, y)
         }
-        ctx.fillText(title, parseInt((width - text.width) / 2), 50)
 
         // Draw the description
-        ctx.font = '18px Arial'
-        const descLines = this._splitTextToLines(ctx, width - 80, desc)
-        let descHeight = 0
+        ctx.fillStyle = 'black'
+        ctx.font = 'italic 16px sans-serif'
+        const descLines = this._splitTextToLines(ctx, width - 120, desc)
+        y += !!alias ? 35 : 25
         descLines.forEach((line, idx) => {
           let text = line.join(' ')
           let textWidth = ctx.measureText(text).width
-          descHeight = 100 + 25 * idx
-          ctx.fillText(text, parseInt((width - textWidth) / 2), descHeight)
+          ctx.fillText(text, parseInt((width - textWidth) / 2), y + 25 * idx)
         })
+        y += 25 * descLines.length
 
         // Draw the illustration
         let image = canvas.createImage()
         const imageSrc = `../../images/${illustration}`
-        const imageWidth = width / 2
+        const imageWidth = 100
         const imageHeight = imageWidth
+        const dy = y
         image.src = imageSrc
         image.onload = () => {
-          ctx.drawImage(image, (width - imageWidth) / 2, descHeight + 10,
-            imageWidth, imageHeight)
+          ctx.drawImage(image, (width - imageWidth) / 2, dy, imageWidth, imageHeight)
         }
 
         // Draw the ext
-        ctx.font = 'italic 16px Arial'
+        ctx.font = 'italic 16px sans-serif'
         ctx.fillStyle = 'gray'
-        this._drawMultipleLines(ctx, ext, 190 + imageWidth, width)
+        y += imageHeight + 25
+        this._drawMultipleLines(ctx, ext, y, 120, width)
 
         // Draw the qrcode image
         const qrCodeImgSize = 80
         const verticalMargin = 10;
         const horizontalMargin = 30
 
-        let y = height - qrCodeImgSize - verticalMargin * 2
+        y = height - qrCodeImgSize - verticalMargin * 2
         ctx.strokeStyle = '#eee'
         ctx.beginPath()
         ctx.moveTo(horizontalMargin, y)
@@ -107,27 +118,39 @@ Page({
         const qrImgHeight = qrCodeImgSize;
         qrImg.src = qrImgSrc
         qrImg.onload = () => {
-          ctx.drawImage(qrImg, horizontalMargin, height - qrCodeImgSize - verticalMargin, qrImgWidth, qrImgWidth)
+          ctx.drawImage(qrImg, horizontalMargin,
+            height - qrCodeImgSize - verticalMargin, qrImgWidth, qrImgWidth)
         }
 
-        const appName = '50 COGNITIVE BIASES'
-        ctx.font = 'bold 14px Arial'
+        const appName = 'SELF DISCIPLINE'
+        ctx.font = 'bold 14px sans-serif'
         ctx.fillStyle = '#374550'
-        const metrics = ctx.measureText(appName)
-        const textWidth = metrics.width
-        ctx.fillText(appName, width - horizontalMargin - textWidth, height - verticalMargin - qrCodeImgSize / 2 + 5)
+        let metrics = ctx.measureText(appName)
+        let textWidth = metrics.width
+        ctx.fillText(appName, width - horizontalMargin - textWidth,
+          height - verticalMargin - qrCodeImgSize / 2 - 5)
+
+
+        const tagline = '50 COGNITIVE BIASES'
+        ctx.font = '12px sans-serif'
+        ctx.fillStyle = '#374550'
+        metrics = ctx.measureText(tagline)
+        textWidth = metrics.width
+        ctx.fillText(tagline, width - horizontalMargin - textWidth,
+          height - verticalMargin - qrCodeImgSize / 2 + 12)
       })
   },
 
-  _drawMultipleLines(ctx, text, yOffset, canvasWidth) {
-    const lines = this._splitTextToLines(ctx, canvasWidth - 80, text)
+  _drawMultipleLines(ctx, text, yOffset, xOffset, canvasWidth, lineHeight = 25) {
+    const lines = this._splitTextToLines(ctx, canvasWidth - xOffset, text)
     let height = 0
     lines.forEach((line, idx) => {
       let text = line.join(' ')
       let textWidth = ctx.measureText(text).width
-      height = yOffset + 25 * idx
+      height = yOffset + lineHeight * idx
       ctx.fillText(text, parseInt((canvasWidth - textWidth) / 2), height)
     })
+    return lines
   },
 
   _splitTextToLines(ctx, maxWidth, text) {
@@ -136,20 +159,23 @@ Page({
     let lineIndex = 0
     let lineWords = []
     const lines = []
+    console.log(words)
     words.forEach(word => {
       const wordWidth = ctx.measureText(word).width
-      totalWidth = totalWidth + wordWidth + 10
-      if (totalWidth > maxWidth) {
+      totalWidth = totalWidth + wordWidth
+      if (totalWidth >= maxWidth) {
         totalWidth = 0
         lines[lineIndex] = lineWords
         lineIndex++
-        lineWords = []
+        lineWords = [word]
+      } else {
+        lineWords.push(word)
       }
-      lineWords.push(word)
     })
     if (lineWords.length > 0) {
       lines[lineIndex] = lineWords
     }
+    console.log(lines)
     return lines
   },
 
@@ -212,13 +238,16 @@ Page({
   // 保存图片
   saveImage(url) {
     let that = this
+    wx.showLoading({ title: 'Saving...' })
     wx.saveImageToPhotosAlbum({
       filePath: url,
       success: (res) => {
-        wx.showModal({ content: '保存成功' })
+        wx.hideLoading()
+        wx.showToast({ icon: 'success', title: 'Saved' })
       },
       fail: (res) => {
-        wx.showModal({ content: `保存失败：${JSON.stringify(res)}` })
+        wx.hideLoading()
+        wx.showToast({ icon: 'error', title: 'Failed' })
       }
     })
   },

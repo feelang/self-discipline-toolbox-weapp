@@ -45,6 +45,11 @@
   font-weight: bold;
 }
 
+.article__subtitle {
+  font-size: 1.2rem;
+  color: gray;
+}
+
 .article__body {
   text-align: center;
   margin-top: 32rpx;

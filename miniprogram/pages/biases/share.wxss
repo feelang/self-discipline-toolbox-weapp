@@ -23,6 +23,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   left: 0;
   bottom: 60rpx;
 }
@@ -30,6 +31,7 @@
 .save-btn text {
   background-color: black;
   color: white;
+  text-align: center;
   margin: 16rpx;
   padding: 16rpx 64rpx;
   border-radius: 64rpx;

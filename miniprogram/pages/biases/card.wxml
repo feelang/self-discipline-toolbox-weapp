@@ -8,28 +8,29 @@
         <view class="article__title">
           <text>{{bias.title}}</text>
         </view>
-        <view class="article__body">
+        <text class="article__subtitle" wx:if="{{!!bias.alias}}">({{bias.alias}})</text>
+        <view class=" article__body">
           <text>{{bias.desc}}</text>
-        </view>
-        <view class="article__illustration">
-          <image src="../../images/{{bias.illustration}}" />
-        </view>
-        <view class="article__caption">
-          <text>{{bias.ext}}</text>
-        </view>
-        <view class="article__labels">
-          <block wx:for="{{bias.labels}}" wx:for-item="label" wx:key="label">
-            <view class="article__label-item" style="color: {{label2color[label]}}">
-              #{{label}}
-            </view>
-          </block>
-        </view>
       </view>
-    </swiper-item>
-  </swiper>
-  <view class="actions">
-    <button class="all-btn" bindtap="onShowAll">ALL</button>
-    <button class="share-btn" bindtap="onShare">SHARE</button>
-  </view>
-  <share-dialog id="bottomFrame" bindclose="onCloseShareDlg" bindsharetomoments="onShareToMoments"></share-dialog>
+      <view class="article__illustration">
+        <image src="../../images/{{bias.illustration}}" />
+      </view>
+      <view class="article__caption">
+        <text>{{bias.ext}}</text>
+      </view>
+      <view class="article__labels">
+        <block wx:for="{{bias.labels}}" wx:for-item="label" wx:key="label">
+          <view class="article__label-item" style="color: {{label2color[label]}}">
+            #{{label}}
+          </view>
+        </block>
+      </view>
+</view>
+</swiper-item>
+</swiper>
+<view class="actions">
+  <button class="all-btn" bindtap="onShowAll">ALL</button>
+  <button class="share-btn" bindtap="onShare">SHARE</button>
+</view>
+<share-dialog id="bottomFrame" bindclose="onCloseShareDlg" bindsharetomoments="onShareToMoments"></share-dialog>
 </view>
