@@ -56,6 +56,10 @@ Page({
         ctx.fillStyle = 'black'
         ctx.font = 'bold 25px Arial'
         let text = ctx.measureText(title)
+        if (text.width > width - 40) {
+          ctx.font = 'bold 20px Arial'
+          text = ctx.measureText(title)
+        }
         ctx.fillText(title, parseInt((width - text.width) / 2), 50)
 
         // Draw the description
@@ -81,14 +85,38 @@ Page({
 
         // Draw the ext
         ctx.font = 'italic 16px Arial'
+        ctx.fillStyle = 'gray'
         this._drawMultipleLines(ctx, ext, 190 + imageWidth, width)
 
-        // Draw the labels
-        ctx.font = '16px Arial'
-        ctx.fillStyle = 'gray'
-        const labelText = labels.join(' / ')
-        const labelTextWidth = ctx.measureText(labelText).width
-        ctx.fillText(labelText, (width - labelTextWidth) / 2, 480)
+        // Draw the qrcode image
+        const qrCodeImgSize = 80
+        const verticalMargin = 10;
+        const horizontalMargin = 30
+
+        let y = height - qrCodeImgSize - verticalMargin * 2
+        ctx.strokeStyle = '#eee'
+        ctx.beginPath()
+        ctx.moveTo(horizontalMargin, y)
+        ctx.lineTo(width - horizontalMargin, y)
+        ctx.stroke()
+
+        let qrImg = canvas.createImage()
+        const qrImgSrc = `../../images/qrcode.jpg`
+        const qrImgWidth = qrCodeImgSize;
+        const qrImgHeight = qrCodeImgSize;
+        qrImg.src = qrImgSrc
+        qrImg.onload = () => {
+          ctx.drawImage(qrImg, horizontalMargin, height - qrCodeImgSize - verticalMargin, qrImgWidth, qrImgWidth)
+        }
+
+        const appName = 'SELF DISCIPLINE'
+        ctx.font = '14px Arial'
+        ctx.fillStyle = '#374550'
+        const metrics = ctx.measureText(appName)
+        const textWidth = metrics.width
+        const textHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
+        console.log(textHeight)
+        ctx.fillText(appName, width - horizontalMargin - textWidth, height - verticalMargin - qrCodeImgSize / 2 + textHeight / 2)
       })
   },
 

@@ -8,11 +8,29 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 #myCanvas {
   margin: 40rpx 0;
   width: calc(100% - 80rpx);
-  height: 70%;
+  height: 80%;
   box-shadow: 2px 2px 16px 4px rgba(0, 0, 0, 0.2);
+}
+
+.save-btn {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  bottom: 40rpx;
+}
+
+.save-btn text {
+  background-color: black;
+  color: white;
+  margin: 16rpx;
+  padding: 16rpx 64rpx;
+  border-radius: 64rpx;
 }
