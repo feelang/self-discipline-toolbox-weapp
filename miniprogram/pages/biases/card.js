@@ -31,7 +31,6 @@ Page({
 
   onShareToMoments() {
     const theBiase = this.data.list[this.data.index]
-
     wx.navigateTo({
       url: '/pages/biases/share?biase=' + JSON.stringify(theBiase),
     })

@@ -97,7 +97,7 @@
   margin: 0rpx 16rpx;
   border-radius: 48rpx;
   color: white;
-  max-width: 200rpx;
+  max-width: 300rpx;
 }
 
 .actions .all-btn {
@@ -108,4 +108,3 @@
 .actions .share-btn {
   background-color: black;
 }
-

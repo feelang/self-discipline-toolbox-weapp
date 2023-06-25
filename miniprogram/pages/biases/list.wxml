@@ -1,6 +1,6 @@
 <view class="container">
-  <block wx:for="{{biases}}" wx:for-item="bias" wx:for-index="index"  wx:key="title">
-    <view class="card">
+  <block wx:for="{{biases}}" wx:for-item="bias" wx:for-index="index" wx:key="title">
+    <view class="card" bindtap="onSelect" data-index="{{index}}">
       <text class="card__index">{{index + 1}}</text>
       <text class="card__title">{{bias.title}}</text>
       <text class="card__subtitle">{{bias.desc}}</text>

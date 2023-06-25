@@ -77,10 +77,11 @@ Page({
         let image = canvas.createImage()
         const imageSrc = `../../images/${illustration}`
         const imageWidth = width / 2
+        const imageHeight = imageWidth
         image.src = imageSrc
         image.onload = () => {
-          ctx.drawImage(image, (width - imageWidth) / 2, descHeight,
-            imageWidth, imageWidth)
+          ctx.drawImage(image, (width - imageWidth) / 2, descHeight + 10,
+            imageWidth, imageHeight)
         }
 
         // Draw the ext
@@ -109,14 +110,12 @@ Page({
           ctx.drawImage(qrImg, horizontalMargin, height - qrCodeImgSize - verticalMargin, qrImgWidth, qrImgWidth)
         }
 
-        const appName = 'SELF DISCIPLINE'
-        ctx.font = '14px Arial'
+        const appName = '50 COGNITIVE BIASES'
+        ctx.font = 'bold 14px Arial'
         ctx.fillStyle = '#374550'
         const metrics = ctx.measureText(appName)
         const textWidth = metrics.width
-        const textHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
-        console.log(textHeight)
-        ctx.fillText(appName, width - horizontalMargin - textWidth, height - verticalMargin - qrCodeImgSize / 2 + textHeight / 2)
+        ctx.fillText(appName, width - horizontalMargin - textWidth, height - verticalMargin - qrCodeImgSize / 2 + 5)
       })
   },
 
@@ -151,8 +150,77 @@ Page({
     if (lineWords.length > 0) {
       lines[lineIndex] = lineWords
     }
-    console.log(lines)
     return lines
+  },
+
+  onSavePicture() {
+    let that = this
+    setTimeout(() => {
+      wx.canvasToTempFilePath({
+        canvas: this.canvas,
+        success: res => {
+          const tempFilePath = res.tempFilePath
+          that.shareImage(tempFilePath)
+        },
+        fail: res => {
+          console.log(res)
+        }
+      })
+    }, 100)
+  },
+
+  async shareImage(url) {
+    let that = this
+    // 验证用户是否拥有保存到相册的权限
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.writePhotosAlbum']) {
+          // 用户已授权
+          that.saveImage(url);
+        } else if (res.authSetting['scope.writePhotosAlbum'] !== undefined) {
+          // 用户首次进入还未调起权限相关接口
+          that.openSetting();
+        } else {
+          // 用户首次进入
+          that.saveImage(url);
+        }
+      },
+      fail: () => {
+        wx.showModal({ content: '获取授权信息失败' })
+      }
+    })
+  },
+
+  // 需要授权
+  openSetting() {
+    wx.showModal({
+      title: '提示',
+      content: '请先授权同意保存图片到相册',
+      confirmText: '确定授权',
+      success: res => {
+        if (res.confirm) {
+          wx.openSetting({
+            fail: () => {
+              wx.showModal({ content: '打开授权设置页面失败' })
+            }
+          });
+        }
+      }
+    })
+  },
+
+  // 保存图片
+  saveImage(url) {
+    let that = this
+    wx.saveImageToPhotosAlbum({
+      filePath: url,
+      success: (res) => {
+        wx.showModal({ content: '保存成功' })
+      },
+      fail: (res) => {
+        wx.showModal({ content: `保存失败：${JSON.stringify(res)}` })
+      }
+    })
   },
 
   /**

@@ -28,8 +28,8 @@
     </swiper-item>
   </swiper>
   <view class="actions">
-    <button class="all-btn" bindtap="onShowAll">All</button>
-    <button class="share-btn" bindtap="onShare">Share</button>
+    <button class="all-btn" bindtap="onShowAll">ALL</button>
+    <button class="share-btn" bindtap="onShare">SHARE</button>
   </view>
   <share-dialog id="bottomFrame" bindclose="onCloseShareDlg" bindsharetomoments="onShareToMoments"></share-dialog>
 </view>

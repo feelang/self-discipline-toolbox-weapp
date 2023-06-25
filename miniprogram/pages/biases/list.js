@@ -10,6 +10,13 @@ Page({
     biases,
   },
 
+  onSelect(e) {
+    const index = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: `/pages/biases/card?index=${index}`
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -36,8 +36,14 @@ Component({
     },
 
     onShareToMoments(e) {
+      this.hideFrame()
       this.triggerEvent('sharetomoments')
     },
+
+    // onShareToFriends(e) {
+    //   this.hideFrame()
+    //   wx.showShareMenu({ withShareTicket: true })
+    // },
 
     catchNone() {
       //阻止冒泡

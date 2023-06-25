@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   left: 0;
-  bottom: 40rpx;
+  bottom: 60rpx;
 }
 
 .save-btn text {
