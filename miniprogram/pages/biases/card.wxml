@@ -13,7 +13,7 @@
           <text>{{bias.desc}}</text>
       </view>
       <view class="article__illustration">
-        <image src="../../images/{{bias.illustration}}" />
+        <image src="../../images/{{bias.illustration}}" mode="aspectFit" />
       </view>
       <view class="article__caption">
         <text>{{bias.ext}}</text>

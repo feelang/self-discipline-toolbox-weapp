@@ -247,7 +247,8 @@ Page({
       },
       fail: (res) => {
         wx.hideLoading()
-        wx.showToast({ icon: 'error', title: 'Failed' })
+        // wx.showToast({ icon: 'error', title: 'Failed' })
+        wx.showModal({ content: `Failed: ${JSON.stringify(res)}` })
       }
     })
   },
