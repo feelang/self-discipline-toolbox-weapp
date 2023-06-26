@@ -21,7 +21,6 @@ Page({
    */
   onLoad(options) {
     const biase = JSON.parse(decodeURIComponent(options.biase))
-    console.log(biase)
     this.setData({
       biase
     })
@@ -76,17 +75,17 @@ Page({
         ctx.font = 'italic 16px sans-serif'
         const descLines = this._splitTextToLines(ctx, width - 120, desc)
         y += !!alias ? 35 : 25
-        descLines.forEach((line, idx) => {
-          let text = line.join(' ')
-          let textWidth = ctx.measureText(text).width
-          ctx.fillText(text, parseInt((width - textWidth) / 2), y + 25 * idx)
-        })
+        this._drawLines(ctx, descLines, y, width, 25)
         y += 25 * descLines.length
+
+        // Adjust the size of illustration accroding to the line count of ext
+        const extLines = this._splitTextToLines(ctx, width - 130, ext)
+        const totalLineCount = descLines.length + extLines.length
 
         // Draw the illustration
         let image = canvas.createImage()
         const imageSrc = `../../images/${illustration}`
-        const imageWidth = 100
+        const imageWidth = totalLineCount >= 10 ? 50 : totalLineCount >= 8 ? 60 : 100
         const imageHeight = imageWidth
         const dy = y
         image.src = imageSrc
@@ -98,7 +97,7 @@ Page({
         ctx.font = 'italic 16px sans-serif'
         ctx.fillStyle = 'gray'
         y += imageHeight + 25
-        this._drawMultipleLines(ctx, ext, y, 120, width)
+        this._drawLines(ctx, extLines, y, width, totalLineCount > 8 ? 20 : 25)
 
         // Draw the qrcode image
         const qrCodeImgSize = 80
@@ -143,6 +142,10 @@ Page({
 
   _drawMultipleLines(ctx, text, yOffset, xOffset, canvasWidth, lineHeight = 25) {
     const lines = this._splitTextToLines(ctx, canvasWidth - xOffset, text)
+    return this._drawLines(ctx, lines, yOffset, canvasWidth, lineHeight)
+  },
+
+  _drawLines(ctx, lines, yOffset, canvasWidth, lineHeight) {
     let height = 0
     lines.forEach((line, idx) => {
       let text = line.join(' ')
@@ -159,7 +162,6 @@ Page({
     let lineIndex = 0
     let lineWords = []
     const lines = []
-    console.log(words)
     words.forEach(word => {
       const wordWidth = ctx.measureText(word).width
       totalWidth = totalWidth + wordWidth
@@ -175,7 +177,6 @@ Page({
     if (lineWords.length > 0) {
       lines[lineIndex] = lineWords
     }
-    console.log(lines)
     return lines
   },
 
