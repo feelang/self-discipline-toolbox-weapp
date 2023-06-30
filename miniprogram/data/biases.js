@@ -1,6 +1,6 @@
-const baises = [
+const biases = [
   {
-    "title": "Fundenmental Attribution Error",
+    "title": "Fundamental Attribution Error",
     "desc": "We judge others on their personality or fundamental character, but we judge ourselves on the situation.",
     "ext": "Sally is late to class; she's lazy. You're late to class; it was a bad morning.",
     "labels": ["Belief", "Social"],
@@ -355,4 +355,4 @@ const baises = [
   },
 ];
 
-module.exports = baises
+module.exports = biases

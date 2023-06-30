@@ -46,9 +46,10 @@ Page({
         const dpr = wx.getSystemInfoSync().pixelRatio
         canvas.width = width * dpr
         canvas.height = height * dpr
-        ctx.fillStyle = 'white'
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
         ctx.scale(dpr, dpr)
+
+        ctx.fillStyle = 'white'
+        ctx.fillRect(0, 0, width, height)
 
         const { title, alias, desc, illustration, ext, labels } = this.data.biase
 
@@ -56,10 +57,9 @@ Page({
         // Draw the title
         ctx.fillStyle = 'black'
         ctx.font = 'bold 30px sans-serif'
-        let text = ctx.measureText(title)
-        const lines = this._drawMultipleLines(ctx, title, y, 100, width, 35)
-
-        y += lines.length > 1 ? 80 : 35
+        const titleLines = this._splitTextToLines(ctx, width - 100, title)
+        this._drawLines(ctx, titleLines, y, width, 35)
+        y += titleLines.length > 1 ? 80 : 35
 
         // Draw the alias
         if (!!alias) {
@@ -138,11 +138,6 @@ Page({
         ctx.fillText(tagline, width - horizontalMargin - textWidth,
           height - verticalMargin - qrCodeImgSize / 2 + 12)
       })
-  },
-
-  _drawMultipleLines(ctx, text, yOffset, xOffset, canvasWidth, lineHeight = 25) {
-    const lines = this._splitTextToLines(ctx, canvasWidth - xOffset, text)
-    return this._drawLines(ctx, lines, yOffset, canvasWidth, lineHeight)
   },
 
   _drawLines(ctx, lines, yOffset, canvasWidth, lineHeight) {

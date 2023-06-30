@@ -1,4 +1,13 @@
 /* components/shareDialog/index.wxss */
+.wrap {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .wrapAnimate {
   animation: wrapAnimate 0.5s ease-in-out forwards
 }
@@ -23,6 +32,15 @@
   100% {
     background: rgba(0, 0, 0, 0);
   }
+}
+
+
+.frame-wrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  top: 50vh;
 }
 
 .frameAnimate {
@@ -50,17 +68,10 @@
 
   100% {
     opacity: 0;
-    top: 100vh;
+    top: 50vh;
   }
 }
 
-.frame-wrapper {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 2;
-  top: 50vh;
-}
 
 .frame {
   background: #fff;
@@ -73,38 +84,6 @@
   z-index: 3;
 }
 
-.title-wrapper {
-  justify-content: flex-end;
-  font-size: 4.9vw;
-  color: #4a4a4a;
-  margin-bottom: 5.9vw;
-}
-
-.title-wrapper>image {
-  width: 3.2vw;
-  height: 3.2vw;
-  padding: 0 5vw;
-  margin-right: -5vw;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.wrap {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.title-close {
-  font-size: 28rpx;
-  color: #4063E7;
-}
 
 .share-btn-wrapper {
   height: 160rpx;

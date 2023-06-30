@@ -1,5 +1,5 @@
 <view wx:if='{{visible}}'>
-  <view class='wrap {{wrapAnimate}}' style='background:rgba(0,0,0,{{bgOpacity}});'></view>
+  <view class='wrap {{wrapAnimate}}' style='background:rgba(0,0,0,0);'></view>
   <view catchtap='hideFrame' class='frame-wrapper {{frameAnimate}}'>
     <view catchtap='catchNone' class='frame'>
       <view class="share-btn-wrapper">

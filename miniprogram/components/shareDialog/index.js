@@ -6,15 +6,14 @@ Component({
   data: {
     visible: false,
     wrapAnimate: 'wrapAnimate',
-    bgOpacity: 0,
     frameAnimate: 'frameAnimate',
   },
 
   properties: {
-    frameTitle: {
-      type: String,
-      value: '标题',
-    }
+    // frameTitle: {
+    //   type: String,
+    //   value: '标题',
+    // }
   },
 
   methods: {
@@ -28,11 +27,6 @@ Component({
       setTimeout(() => {
         that.setData({ visible: false })
       }, 200);
-    },
-
-    onClose(e) {
-      this.hideFrame(e);
-      this.triggerEvent('close');
     },
 
     onShareToMoments(e) {
