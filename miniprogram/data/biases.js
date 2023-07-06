@@ -72,7 +72,7 @@ const biases = [
   {
     "title": "Availability Heuristic",
     "desc": "We rely on immediate examples that come to mind while making judgments.",
-    "ext": "When trying to decide on which store to visit, you choose the one you most recently sas an ad for.",
+    "ext": "When trying to decide on which store to visit, you choose the one you most recently saw an ad for.",
     "labels": ["Belief", "Learning", "Memory", "Politics", "Money"],
     "illustration": "biases/availability-heuristic.jpg",
   },
